@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> // We can't have array keys as Object
+a =  {};
+b = { key: 1};
+c = {key: 3};
+a[b] = 666;
+a[c] = 888;
+console.log(a);
+console.log(a[b]);
+/*Q2*/
+for(i = 0;i< 5;i++) {
+	setTimeout(function() { console.log(i)}, i * 1000 );
+}
+/*Q3*/
+console.log("10" + "2") //"102"
+console.log("10" -"2") //8
+console.log("10" +-"2") //"10-2"
+console.log("10" + - "2") //"10-2"
+console.log(10 + - "2") //8
+/*Q4*/
+var a = {1: "A",2: "B"}; 
+console.log(a.1,a."1"); // Error
+console.log(a[1],a[2],a["1"],a["2"]);
+var b = { key: 1,key2 : 2}; // or var b = [key: "hai", key2: "hello"]; (Same for Object and Array)
+console.log(b);
+console.log(b.key,b.key2) // We can use "." for ony string indexes for accessing a object properties
+console.log(b["key"],b["key2"]);
+console.log(b[key],b."key"); // Error
+//-------//
+var g = [];
+g[0] = "zero";
+g[1] = "one";
+g[2] = "two";
+console.log(g);
+console.log(g[0],g[1],g[2]);
+console.log(g.0, g."0"); // Error
+var d = [];
+d[h1] = "hai" // Error Because of h1 should be string index.
+d["h1"] = "hai";
+d["h2"] = "hello";
+console.log(d);
+console.log(d["h1"],d["h2"]);
+console.log(d[h1],d[h2]); // Error Because of h1 should be string index.
+console.log(d["h1"],d["h2"]);
+console.log(d.h1,d.h2); // Works Fine
+console.log(d."h1",d."h2"); // Error
+/*Q5*/
+var a = {};
+for(var i = 0; i< 5; i++) {
+	a[i] = function() {
+		//console.log(i);
+		return i;
+	}
+}
+console.log(a,i);
+console.log(a[0](),a[1](),a[2](),a[3](),a[4]()); //OP:-  5 5 5 5 5 :: Because while creating the function for every iteration, it searches for the value "i" with in the function,It never finds "i" in the function , so it return "i" value as the global variable, Which is 5 after the loop. 
+//Here for every iteration the value in the function as only "i", Because we are creating the function but not executing immediatly.
+//----Using Closures----//
+var b = {};
+for(i = 0; i< 5; i++) {
+	(function(j) { /*Outer function*/
+		b[j] = function() { /*Inner function*/
+			/*console.log(j);*/
+			return j;
+		}
+	})(i); //IIFE
+}
+console.log(b,i);
+console.log(b[0](),b[1](),b[2](),b[3](),b[4]()); // Op:- 0 1 2 3 4 :: Because while creating the function for each iteration, the outer function gets executed automatically and creating 5 functions with value of "j" in the inner function as 0,1,2,3,4 and when we call the inner function from the outside it returns the same.Closure way:- First it searches the value of "j" inside the inner function, if it's not found , it travels upwards and search in the outer function scope.
+// Here for every iteration the outer function executes automatically and assign "j" value as the it's context or scope. When we call the inner Function, it returns the value of "j" as it's context value.
+</script>
+
+</body>
+</html>

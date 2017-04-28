@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img src="https://nest.com/support/images/misc-assets-icons/settings-icon.png" id="i1" width="150" height="150">
+<img src="https://nest.com/support/images/misc-assets-icons/settings-icon.png" id="i2" width="150" height="150">
+<img src="https://nest.com/support/images/misc-assets-icons/settings-icon.png" id="i3" width="150" height="150">
+<script> 
+	function Animation(id,dir) {
+	  var deg = 10;
+	  var getImg = document.getElementById(id);
+	  var rotate = function() {
+		if(dir === "cw") {
+			getImg.style.transform = "rotate("+deg+"deg)";	
+		} else {
+			getImg.style.transform = "rotate(-"+deg+"deg)";	
+		}
+		deg += 10;
+	  }
+	 setInterval(rotate,200);
+	}
+	var imgObj1 = new Animation("i1","cw");
+	var imgObj1 = new Animation("i2","acw");
+	var imgObj1 = new Animation("i3","cw");
+</script>
+</body>
+</html>

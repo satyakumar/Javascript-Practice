@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+            class Fruit {
+               constructor(name) {
+                  this.name = name;
+                  this.setColor2 = function(c) {
+                     this.color = c;
+                  }
+                  this.go = "Gp";
+               }
+               /*this.setColor2 = function(c) { //Note:- We can't use instance variables and methods("this") outside the constructor function
+                     this.color = c;
+                  }
+                  this.go = "Gp";*/
+               /*set color(color) {
+                  //this.color = color;
+               }
+               get getColor() {
+                  return this.color;
+               }*/
+               
+            }
+            var appleObj = new Fruit("Apple");
+            appleObj.setColor2("red");
+            console.log(appleObj);
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

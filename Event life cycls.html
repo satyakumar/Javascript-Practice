@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head><body>
+
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+<form id="form">FORM
+  <div id="div">DIV
+    <p id="p">P</p>
+  </div>
+</form>
+<script type="text/javascript"> //http://plnkr.co/edit/Fy8dJH7RkBhGEJcjHxXX?p=preview
+	var form = document.getElementById("form"),
+		div = document.getElementById("div"),
+		p = document.getElementById("p");  
+	  function executeMe() {
+		console.log(event.target.localName)
+	  } 
+	/*p.addEventListener('click',executeMe); // event bubbling
+	div.addEventListener('click',executeMe); // event bubbling
+	form.addEventListener('click',executeMe); // event bubbling */
+	p.addEventListener('click',executeMe,true); // event capturing
+	div.addEventListener('click',executeMe,true); // event capturing
+	form.addEventListener('click',executeMe,true); // event capturing
+</script>
+</body>
+</html>
+</script>
+
+</body>
+</html>

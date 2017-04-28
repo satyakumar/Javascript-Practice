@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <h1>Anonymous function</h1>
+    <button id="dbtn">Dummy</button>
+	<button id="btn" onclick="doValid()">Working</button>
+	<script type="text/javascript">
+		function doValid()  {
+			var btnDummy = document.getElementById("dbtn");
+			btnDummy.innerHTML = "This is also working! Please test it."
+			btnDummy.onclick = function() {
+				alert("This is not a dummy button");
+		  }
+		}
+	</script>
+  </body>
+</html>

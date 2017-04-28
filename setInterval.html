@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="button" value="start" onclick="start()">
+<input type="button" value="stop" onclick="stop()">
+<p id="re"></p>
+<script>
+var intervalId;
+function time() {
+	document.getElementById("re").innerHTML = new Date();
+} 
+function start() {
+	intervalId = setInterval(function() { time(); },1000);
+}
+function stop() {
+	clearInterval(intervalId);
+}
+time();
+</script>
+
+</body>
+</html>

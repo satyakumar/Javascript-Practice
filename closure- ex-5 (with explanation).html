@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Counting with a global variable.</p>
+
+<button type="button" onclick="count()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+	var outerFun = (function() { 
+    	//var val = parseInt(document.getElementById("demo").innerHTML);
+		// Closures means:- we can't access a local variable which is declared in a function from outside, but we can access a function inside another using closures. Because in Javascript nested functions have the access of parents.
+		// When we use a outer function as self executing function by using () means that will execute while page is being loading. When using closure when we call a outerfunction every time it executes only inner function.
+		
+        var val = 0;
+       	console.log("Outer Function Executing at "+val+" time");
+        var innerFun = function() { 
+        	console.log("Inner Function Executing at "+val+" time");
+        	return ++val;
+        }
+        return innerFun;
+    })();
+    function count() {
+    	document.getElementById("demo").innerHTML = outerFun();
+    }
+</script>
+
+</body>
+</html>

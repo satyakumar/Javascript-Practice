@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div style="width:200px;height:200px;background: orange" onmouseover="track(event)" onmouseenter="track(event)" onmouseleave="track(event)" onmousedown="track(event)" onmouseup="track(event)" onmouseout="track(event)" onnclick="track(event)" ondblclick="track(event)"></div>
+
+<textarea id="te" cols="60" rows="80"></textarea>
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function track(e) { 
+    	document.getElementById("te").value += "\n"+e.type;
+    }
+</script>
+
+</body>
+</html> 

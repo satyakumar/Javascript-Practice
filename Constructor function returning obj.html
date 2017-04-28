@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	function Employee(name,sal) { //https://jsfiddle.net/kebugpng/
+	  this.name = name;
+	  this.sal = sal;
+	  this.getDetails = function() {
+		var o = {};
+		o.name = this.name;
+		o.sal = this.sal;
+		o.anuSal = function() { return this.sal*12; };
+		return o;
+	  }
+	}
+	var oEmp1 = new Employee("Satya",50000);
+	console.log(oEmp1);
+	console.log(oEmp1.getDetails(),oEmp1.getDetails().anuSal());
+</script>
+
+</body>
+</html>

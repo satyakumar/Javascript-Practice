@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <h1>Function Declare types</h1>
+    <script type="text/javascript">
+		// Scenario 1 
+		var doSum = function(a,b) { //https://jsfiddle.net/nb7c5pnb/
+			alert("Sum is:- "+(a+b).toString());
+		  return function() {
+			return a-b;
+		  }
+		}
+		var returnval = doSum(2,1);
+		console.log(returnval);
+		alert("Diff is:- "+ returnval());
+		// Scenario 2 
+		var doSum2 = function(a,b) {
+			alert("Sum is:- "+(a+b).toString());
+		  return function() {
+			alert("Diff is:- "+ (a-b).toString())
+		  }
+		};
+		var returnval1 = doSum2(10,20);
+		console.log(returnval1);
+		returnval1();
+    </script>
+	
+  </body>
+</html>

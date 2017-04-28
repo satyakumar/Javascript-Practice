@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+           class Fruit { //https://jsfiddle.net/cv159pzu/1/
+				constructor(name,color) {
+				this.name = name;
+				this.color = color;
+			  }
+			}
+			Fruit.isHealthy = true;
+			Fruit.prototype.ish = 'sss';
+			let appleObj = new Fruit("Apple","Red");
+			let grapeObj = new Fruit("Grape","green");
+			console.log(appleObj,appleObj.ish,Fruit.isHealthy,appleObj.isHealthy);
+			console.log(grapeObj,grapeObj.ish,Fruit.isHealthy,appleObj.isHealthy);
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

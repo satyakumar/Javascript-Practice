@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	function Employee() {
+	  this.eName = "";
+	  this.sal = 0;
+	  this.setEmp = function(o) {
+		this.eName = o.name;
+		this.sal = o.sal;
+	  }
+	  this.anuSal = function() {
+		return this.sal*12;
+	  }
+	}
+	var oEmp1 = new Employee();
+	console.log(oEmp1)
+	oEmp1.setEmp({name: "Satya",sal:50000});
+	console.log(oEmp1)
+	console.log(oEmp1.anuSal());
+</script>
+
+</body>
+</html>

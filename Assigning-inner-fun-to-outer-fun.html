@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <h1>Anonymous function</h1>
+    <script type="text/javascript">
+		function sum(a,b) { //https://jsfiddle.net/3oj7zv6x/
+			console.log("Sum:- ",(a+b));
+		  function ded(a,b) {
+			//return "Ded is:- "+(a-b);
+			console.log("Ded is:- ",(a-b));
+		  }
+		  sum = ded;
+		}
+		sum(10,5);
+		sum(1000,5);
+		sum(100,5);
+	</script>
+  </body>
+</html>

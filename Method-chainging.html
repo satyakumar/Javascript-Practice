@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	function Employee(name,sal) { //https://jsfiddle.net/5u7qvpt8/
+	  this.name = name;
+	  this.sal = sal;
+	  this.incSal = function(iSal) {
+		this.sal += iSal;
+		return this;
+	  }
+	}
+	var o1 = new Employee("Satya",50000);
+	console.log(o1);
+	console.log(o1.incSal(10000));
+	console.log(o1.incSal(10000).incSal(5000));
+	console.log(o1.incSal(10000).incSal(5000),o1.incSal(10000).incSal(5000).sal);
+</script>
+
+</body>
+</html>

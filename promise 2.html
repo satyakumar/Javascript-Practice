@@ -1,0 +1,84 @@
+<html>
+  <body>
+    <h1>Simple Example Page</h1>
+    <script type="text/javascript">
+	  console.log("start");	
+	  /*Promise - resolve call*/
+	  setTimeout(function() { console.log("Without Promise :- 10");},1000)
+      var promise = new Promise(function(resolve,reject) {
+		setTimeout(function() { resolve(10)},1000)
+	  });
+	  promise
+	  .then(function(result) {
+		console.log("First then :-", result);
+		return result * 2;
+	  })
+	  .then(function(result) {
+		console.log("Second then :-", result);
+		return result * 2;
+	  })
+	  .then(function(result) {
+		console.log("Third then :-", result);
+		return result * 2;
+	  });
+	  /*Promise - resolve call*/
+	  /*Promise - reject call*/
+	  var reject = new Promise(function(resolve,reject) {
+		setTimeout(function() { reject("Rejected");},2000)
+	  });
+	  reject
+	  .then(function(result) {
+		console.log("Success call for reject");
+	  })
+	  .catch(function(err) {
+		console.log(err);
+	  });
+	  /*Promise - reject call*/
+	  /*Promise - all with one reject*/
+	  Promise.all([promise,reject])
+	  .then(function(result) {
+		console.log("Promise.all then call ",result);
+	  })
+	  .catch(function(err) {
+		console.log("Promise.all catch call",err);
+	  });
+	  /*Promise - all with one reject*/
+	  /*Promise - all without reject*/
+	  var p1 = new Promise(function(resolve,reject) {
+			function add() {
+				return 8+5;
+			}
+			resolve(add());
+	  });
+	  var p2 =  new Promise(function(resolve,reject) {
+		function sub() {
+			return 8-5;
+		}
+		resolve(sub());
+	  });
+		// Promise with inside a function 
+		  p1.then(function(result) {
+			console.log("Promise with inside a function then call",result);
+		  })
+		  .catch(function(err) {
+			console.log("Promise with inside a function catch call",err);
+		  });
+		// Promise with inside a function 
+		Promise.all([p1,p2])
+		.then(function(result) {
+			console.log("Promise.all with inside a function then call",result);
+		})
+		.catch(function(err) {
+			console.log("Promise.all with inside a function catch call",err);
+		});
+	  /*Promise - all without reject*/
+	  console.log("stop");
+    </script>
+	<div style="width:100px;height:100px;background:orange;margin:0 auto;">
+	
+	</div>
+	<div style="width:100px;height:100px;background:pink;margin:0 auto;">
+	
+	</div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <h1>Simple Example Page</h1>
+    <script type="text/javascript">
+	  $(document).ready(function() { //https://jsfiddle.net/c04j71r9/
+		var arr1 = []; // Trying to findout length of the string based indexes
+		  arr1['a'] = "Letter A";
+		  arr1['b'] = "Letter B";
+		  arr1['c'] = "Letter C";
+		  $("#b1").on("click",function() {
+			$($(this)).before(arr1.length);
+		  });
+		  var arr2 = [];
+		  arr2[3] = "This is first element";
+		  $("#b2").on("click",function() {
+			$($(this)).before(arr2.length);
+			console.log(arr2);
+		  });
+		  var arr3 = [];
+		  arr3[3] = "This is the first element";
+		  arr3["four"] = "This is string index based value";
+		   $("#b3").on("click",function() {
+			$($(this)).before(arr3.length);
+			console.log(arr3);
+	  });
+	});
+    </script>
+	<div>
+<h1>Array test 1</h1>
+<button type="button" id="b1">Test1</button>
+</div>
+<div>
+<h1>Array test 2</h1>
+<button type="button" id="b2">Test2</button>
+</div>
+<div>
+<h1>Array test 3</h1>
+<button type="button" id="b3">Test3</button>
+</div>
+  </body>
+</html>

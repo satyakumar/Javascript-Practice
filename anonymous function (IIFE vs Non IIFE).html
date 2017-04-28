@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <h1>Anonymous function</h1>
+    <script type="text/javascript">
+	var count = function() { // Not IIFE
+		var start = 0;
+		console.log("At Not IIFE Loaded while page is being loaded",start);
+		return function() {
+			return ++start;
+			}
+		};
+	function increment() { 
+		console.log(count);
+		console.log(count());
+		console.log(count()());
+	}
+	var count_iife = (function() { // IIFE
+		var start_iife = 0;
+		console.log("At IIFE Loaded while page is being loaded",start_iife);
+		//return "hi";
+		return function() { // IIFE Return (when we call a IIFE function, It will directly go to return statement)
+			return ++start_iife;
+			}
+		})();
+	function increment_iife() { 
+		console.log(count_iife);
+		//console.log(count_iife());
+		document.getElementById("p_iife").innerHTML = count_iife();
+	}
+	</script>
+	<div>
+	<p>
+	0
+	</p>
+	<button type="button" onclick="increment()">
+	  + (Not for IIFE)
+	</button>
+	</div>
+	<div>
+	<p id="p_iife">
+	0
+	</p>
+	<button type="button" onclick="increment_iife()">
+	  + (For IIFE)
+	</button>
+	</div>
+  </body>
+</html>

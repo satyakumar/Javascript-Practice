@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <h1>Function Callback</h1>
+    <script type="text/javascript">
+		function add(a,b,cb) { //https://jsfiddle.net/y3uz2o03/
+			alert("Sum is:- "+(a+b).toString());
+		  cb(a,b);
+		}
+		function ded(a,b) {
+			alert("Ded is:- "+(a-b).toString());
+		}
+		function mult(a,b) {
+			alert("Multi is:- "+(a*b).toString());
+		}
+		add(1,2,ded);
+		add(2,2,mult);
+    </script>
+	
+  </body>
+</html>

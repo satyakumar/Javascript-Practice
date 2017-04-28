@@ -1,0 +1,38 @@
+<html>
+  <body>
+    <h1>Simple Example Page</h1>
+    <script type="text/javascript">
+	  // snippet 1	
+	  function show() {
+			a = 1;
+			alert(a);
+		}
+		show();
+		alert(a);
+		// snippet 1
+		// snippet 2
+		function show2() {
+			var xVal = 2;
+			alert(xVal);
+		}
+		show2();
+		console.log(xVal);
+		// snippet 2
+		// snippet 3
+		var m = "This is M in global";
+		function vscope() {
+			var m = "This is M in local";
+			console.log(m);
+		}
+		vscope();
+		console.log(m);
+		// snippet 3
+    </script>
+	<div style="width:100px;height:100px;background:orange;margin:0 auto;">
+	
+	</div>
+	<div style="width:100px;height:100px;background:pink;margin:0 auto;">
+	
+	</div>
+  </body>
+</html>

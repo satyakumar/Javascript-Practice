@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	"use strict";
+	var add = (function() {
+			var iCount = 0;
+			var incCount = function() {
+				return ++iCount;
+			}
+			return incCount;
+		var re = add()();
+	})(); 
+	
+	/*function outer() {
+		var iCount = 0;
+		function inner() {
+			return ++iCount;
+		}
+		return inner;
+	}
+	var res = outer()();*/
+</script>
+<input type="button" onclick="alert(add())" value="click"/>

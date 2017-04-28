@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <h1>Anonymous function</h1>
+    <script type="text/javascript">
+		function sum() { //https://jsfiddle.net/xm0tLsp7/
+			//var sum = "";
+		  var sum = 0;
+		  for(i in arguments) { 
+			sum += arguments[i];
+		  }
+		  return sum;
+		}
+		console.log(sum(1,2,3,4));
+		var sum2 = (function() {
+			var sum2 = 0;
+		  for(i in arguments) {
+			sum2 += arguments[i];
+		  }
+		  return sum2;
+		})(10,20,30,40);
+		console.log(sum2);
+	</script>
+  </body>
+</html>

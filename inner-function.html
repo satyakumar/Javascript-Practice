@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Counting with a local variable.</p>
+
+
+
+<p id="demo">0</p>
+
+<script> 
+	(function() { 
+    	var val = document.getElementById("demo").innerHTML;
+        function add() { 
+        	document.getElementById("demo").innerHTML = ++val;
+        }
+        return add();
+    })();
+</script>
+
+</body>
+</html>

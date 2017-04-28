@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	function Employee(eno,ename,esal,edept) { //https://jsfiddle.net/2xLsqkmy/
+		this.empNo = eno;
+		this.eName = ename;
+		this.sal = esal;
+		this.dept = edept;
+		this.anuSal = function() {
+			return esal*12;
+		}
+		}
+		var eObj1 = new Employee(73942,"Satya",50000,12);
+		console.log(eObj1);
+		console.log(eObj1 instanceof Employee);
+
+		function showEmpWith(o) {
+			with(o) {
+			console.log(o.empNo,o.eName,o.sal,o.dept,o.anuSal());
+		  }
+		}
+		showEmpWith(eObj1);
+</script>
+
+</body>
+</html>

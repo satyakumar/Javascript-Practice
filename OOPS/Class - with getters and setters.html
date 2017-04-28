@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+          class State { //https://jsfiddle.net/z42sgjvq/
+			constructor(name,st) {
+			this.stateName = name;
+			this.yourState = st;
+		  }
+			isYourState() {
+			console.log(this.stateName," is your state?:- ",this.yourState);
+			return ":-)";
+		  }
+		  static country() {
+			console.log(this.stateName," is under country India");
+			return ":-)";
+		  }
+		}
+		var kar = new State("Karnataka","No");
+		var ap = new State("Andhra","Yes");
+		console.log(kar.isYourState());
+		console.log(ap.isYourState());
+		console.log(State.country(),kar.country())
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

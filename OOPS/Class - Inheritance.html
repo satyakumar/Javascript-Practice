@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+          class State { //https://es6console.com/j1oqrwa7/
+			constructor(name) {
+				this.stateName = name;
+				console.log("Initilizing state constructor")
+			}
+		}
+		class Districts extends State {
+			constructor(st_name,dt_name) {
+				super(st_name);
+				this.distName = dt_name;
+				//super(st_name); //Gets error as we should not put instance variables before super keyword in a constructor.
+			  console.log("Initilizing district constructor")
+			}	 
+		}
+		let wgdtObj = new Districts("Andhra Pradesh","West Godavari");
+		console.log(wgdtObj instanceof Districts);
+		console.log(wgdtObj instanceof State);
+		console.log(wgdtObj instanceof Object);
+		console.log(wgdtObj);
+		let egdtObj = new Districts("Andhra Pradesh","East Godavari");
+		console.log(egdtObj.stateName);
+		console.log(egdtObj);
+
+
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

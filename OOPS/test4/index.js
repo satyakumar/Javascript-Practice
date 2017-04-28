@@ -1,0 +1,1 @@
+import {BaseClass} from 'base-class.js';

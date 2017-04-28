@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script> 
+	var Department = function(dNum,dName) { //https://jsfiddle.net/q02wm884/
+	this.deptNum = dNum;
+	  this.deptName = dName;
+	}
+	var Employee = function(eName,eNo,dNum,dName) {
+		this.empName = eName;
+	  this.empNo = eNo;
+	  //var Dept = new Department(dNum,dName); WE can't access this variable from outside as it's private variable
+	  this.Dept = new Department(dNum,dName);
+	}
+	var emp = new Employee("Satya",10313,2,"APPS");
+	console.log(emp);
+	console.log(emp.Dept);
+	console.log(emp.Dept.deptName);
+
+</script>
+
+</body>
+</html>

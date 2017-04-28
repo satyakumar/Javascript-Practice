@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+         class State { //https://repl.it/HP27/1
+			about() {
+			  console.log("About State");
+			}
+			static country() {
+			  console.log("In State:- India");
+			}
+		}
+		class Districts extends State {
+		  about() {
+			super.about();
+			  console.log("About Districts");
+			}
+			static country() {
+			  super.country();
+			  console.log("In Districts:- India");
+			}
+		}
+		let stateObj = new State();
+		console.log(stateObj.about());
+		let wgdtObj = new Districts();
+		console.log(wgdtObj.about());
+		let egdtObj = new Districts();
+		console.log(egdtObj.about());
+		console.log(State.country(),Districts.country());
+
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>

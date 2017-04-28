@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <h1>Anonymous function</h1>
+    <script type="text/javascript">
+		function sum (a,b) { //https://jsfiddle.net/wnwxs6rL/
+			console.log("sum is:- ",(a+b));
+		  function ded() {
+			return a-b;
+		  }
+		  function multi() {
+			return a*b;
+		  }
+		  return ded;
+		}
+		var result = sum(2,4);
+		console.log("Ded is:- ",result());
+
+		//Same for IIFE
+		var sum = (function(a,b) {
+			console.log("Sum is:- ",(a+b));
+		  return function() {
+			return a-b;
+		  }
+		})(30,20);
+		console.log("Ded is:- ",sum());
+	</script>
+  </body>
+</html>

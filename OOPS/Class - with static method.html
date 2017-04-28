@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <script>
+          class Mobile { //https://es6console.com/j1onrdj8/
+			constructor(name) {
+			this.mobileName = name;
+			/*this.m = function() {
+				return "k";
+			}*/
+		  }
+		  get mobile() {
+			return this.mobileName;
+		  }
+		  set mobile(name) {
+			this.mobileName = name;
+		  } 	
+		}
+		let nokia = new Mobile("Nokia");
+		console.log(nokia,nokia.mobile);
+		nokia.mobile = "Micorsoft Nokia";
+		console.log(nokia,nokia.mobile);
+
+        </script>
+  </head>
+
+  <body>
+    
+  </body>
+
+</html>
